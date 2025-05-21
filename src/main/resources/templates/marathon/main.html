@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>메인(검색) - RM</title>
+    <link rel="stylesheet" type="text/css" href="/assets/styles/common.min.css">
+    <link rel="stylesheet" href="/marathon/assets/styles/main.min.css">
+    <script src="/assets/scripts/common.js" type="text/javascript"></script>
+    <script defer src="/marathon/assets/scripts/apikey.js" type="text/javascript"></script>
+    <script defer src="/marathon/assets/scripts/main.js" type="text/javascript"></script>
+</head>
+<body th:data-login-check="${loginCheck}">
+<div id="user-menu">
+    <a href="/user/register" class="user-register">회원가입</a>
+    <a href="/user/login" class="user-login">로그인</a>
+    <a href="/user/mypage" class="user-mypage">마이페이지</a>
+</div>
+<div id="menu">
+    <div class="item-cart">
+        <button class="cart-button" type="button">
+            <span class="cart-count">0</span>
+            <img alt="" class="cart-img" src="/marathon/assets/images/searchForm-list.png">
+        </button>
+        <div class="cart-list" id="cart-list"></div>
+    </div>
+    <div class="item-start">
+        <button class="start-button" type="submit">
+            <img alt="" class="start-img" src="/marathon/assets/images/searchForm-start.png">
+        </button>
+    </div>
+</div>
+<form novalidate id="searchForm">
+    <h1 class="title">ReadingMarathon</h1>
+    <label class="--object-label">
+        <input autofocus required autocomplete="off" class="--object-field" maxlength="50" minlength="1" name="search"
+               spellcheck="false" type="search">
+        <button class="--object-button -color-green" type="submit">검색</button>
+    </label>
+
+    <div class="--object-area">
+        <div class="content">검색 결과가 없습니다.</div>
+    </div>
+</form>
+</body>
+</html>

@@ -1,0 +1,138 @@
+@charset "utf-8";
+
+#menu {
+    right: 2.5rem;
+    bottom: 2rem;
+    position: fixed;
+    z-index: 1;
+
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+    justify-content: center;
+}
+
+#menu .cart-count {
+    position: absolute;
+    top: -30%;
+    left: 80%;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 999rem;
+    color: #ec7063;
+    background-color: #ccc;
+    text-align: center;
+    line-height: 1.5rem;
+    opacity: 0;
+    pointer-events: none;
+
+    transition-duration: 250ms;
+    transition-property: opacity;
+    transition-timing-function: ease;
+}
+
+#menu .cart-count.-visible {
+    opacity: 1;
+}
+
+#menu .start-img {
+    width: 4.2rem;
+}
+
+#menu .cart-button,
+#menu .start-button {
+    position: relative;
+    cursor: pointer;
+    z-index: 1;
+
+    transition-duration: 250ms;
+    transition-property: transform;
+    transition-timing-function: ease;
+}
+
+#menu .cart-button:hover,
+#menu .start-button:hover {
+    transform: translateY(-4px) scale(1.02);
+}
+
+#menu .cart-button:active img,
+#menu .start-button:active img {
+    filter: brightness(90%);
+}
+
+#menu .cart-list {
+    position: absolute;
+    top: 10%;
+    right: 90%;
+    max-width: 20rem;
+    max-height: 20rem;
+    overflow-x: hidden;
+    overflow-y: auto;
+    cursor: default;
+    background-color: #f9f9f9;
+    border: 0.0625rem solid #ccc;
+    border-radius: 0.5rem;
+    padding: 0.625rem;
+    transform: translateY(-100%);
+    opacity: 0;
+    white-space: nowrap;
+    pointer-events: auto;
+
+    transition-duration: 250ms;
+    transition-property: opacity;
+    transition-timing-function: ease;
+
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+#menu .cart-list.-visible {
+    opacity: 1;
+}
+
+#menu .cart-item {
+    position: relative;
+    min-height: 1.5rem;
+    top: 0;
+    left: 0;
+    width: 100%;
+    font-size: 1.05rem;
+    font-weight: 400;
+    text-align: start;
+
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+#menu .book-title {
+    flex: 1;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin-right: 0.5rem;
+}
+
+#menu .delete-button {
+    position: relative;
+    margin-left: 0.625rem;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+    background-color: #ff4d4f;
+    color: #ffffff;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+#menu .delete-button:hover {
+    background-color: #d9363e;
+}
+
+#menu .delete-button:active {
+    background-color: #b72f30;
+}

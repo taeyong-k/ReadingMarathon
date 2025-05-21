@@ -1,0 +1,73 @@
+@import "../../../assets/styles/_def";
+
+body {
+  @include flex(column, stretch, flex-start);
+}
+
+#loginForm {
+  @include flex(column, stretch, center, 0.8rem);
+  width: 25rem;
+  align-self: center;
+  padding: 2rem 5rem;
+  background-color: #f5f3f2;
+  //margin: auto;
+  //box-shadow: 0 0 1rem 0.025rem #dbdbdb;
+
+  > .title {
+    font-size: 1.75rem;
+    font-weight: 200;
+    margin-bottom: 1.5rem;
+  }
+
+  > .--object-button {
+    @include flex(row, center, center, 0.5rem);
+    height: 2rem;
+
+    > .---caption {
+      font-size: 1rem;
+    }
+
+    > .---icon {
+      height: 1.2rem;
+    }
+  }
+
+  > .menu {
+    //@include flex(column, stretch, flex-start, 1rem);
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+
+    > .item {
+      @include flex(row, center, center, 1rem);
+
+      > .link {
+        color: #1abc9c;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 100rem) {
+  #loginForm {
+    padding: 2rem 5rem;
+  }
+}
+@media screen and (max-width: 80rem) {
+  #loginForm {
+    padding: 2rem 1rem;
+  }
+}
+@media screen and (max-width: 60rem) {
+  #loginForm {
+    padding: 2rem 5rem;
+  }
+}
+@media screen and (max-width: 40rem) {
+  #loginForm {
+    padding: 2rem 1rem;
+  }
+}

@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>마이페이지 - SUB</title>
+    <link href="/assets/styles/common.css" rel="stylesheet">
+    <link href="/user/assets/styles/info.css" rel="stylesheet">
+    <script src="/assets/scripts/common.js"></script>
+    <script defer src="/assets/scripts/dialog.js"></script>
+    <script defer src="/user/assets/scripts/info.js"></script>
+</head>
+<body>
+<form id="infoForm" novalidate>
+    <h1 class="title">마이페이지</h1>
+    <table class="table">
+        <tbody>
+        <tr>
+            <th scope="row">
+                <label class="caption" for="infoEmail">이메일</label>
+            </th>
+            <td>
+                <div class="row">
+                    <input readonly required autocomplete="off" class="-object-field" id="infoEmail" name="email" spellcheck="false" type="text" th:value="${session.signedUser.email}">
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">
+                <label class="caption" for="infoCurrentPassword">현재 비밀번호</label>
+            </th>
+            <td>
+                <div class="row">
+                    <input required autocomplete="off" class="-object-field" id="infoCurrentPassword" maxlength="50" minlength="8" name="currentPassword" spellcheck="false" type="password">
+                    <span class="warning -visible">현재 비밀번호를 입력해주세요</span>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">
+                <label class="caption" for="infoNewPassword">신규 비밀번호</label>
+            </th>
+            <td>
+                <div class="row">
+                    <input autocomplete="off" class="-object-field" id="infoNewPassword" maxlength="50" minlength="8" name="newPassword" spellcheck="false" type="password">
+                    <span class="warning -visible">비밀번호가 일치하지 않습니다.</span>
+                </div>
+                <div class="row">
+                    <input autocomplete="off" class="-object-field" maxlength="50" minlength="8" name="newPasswordCheck" spellcheck="false" type="password">
+                    <span class="warning -visible">비밀번호를 한 번 더 입력해 주세요.</span>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">
+                <label class="caption" for="infoNickname">닉네임</label>
+            </th>
+            <td>
+                <div class="row">
+                    <input required autocomplete="off" class="-object-field" id="infoNickname" maxlength="10" minlength="2" name="nickname" spellcheck="false" type="text" th:value="${session.signedUser.nickname}">
+                    <span class="warning -visible">이미 사용중인 닉네임입니다.</span>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">
+                <label class="caption" for="infoBirth">생일</label>
+            </th>
+            <td>
+                <div class="row">
+                    <input autocomplete="off" class="-object-field" id="infoBirth" name="birth" type="date" th:value="${session.signedUser.birth}">
+                    <span class="warning -visible">그냥 내놔.</span>
+                </div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <div class="button-container">
+        <a class="-object-button --color-gray" href="/user/logout">로그아웃</a>
+        <button class="-object-button --color-green" type="submit">개인정보 수정하기</button>
+    </div>
+</form>
+</body>
+</html>

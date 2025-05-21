@@ -1,0 +1,257 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+h1, h2, h3, h4, h5, h6 {
+  font: inherit;
+  margin-block: initial;
+  margin-inline: initial;
+}
+
+body {
+  background-color: #fafcfe;
+  color: #212325;
+  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 300;
+  margin: initial;
+  user-select: none;
+}
+
+#menuContainer > .menu-div {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-items: flex-start;
+  gap: 4rem;
+}
+#menuContainer > .menu-div > .--object-div-select > .userSelect-label > .select-button {
+  position: absolute;
+  width: 15rem;
+  height: 3rem;
+  border-radius: 0.375rem;
+  background-color: #1abc9c;
+  color: #ffffff;
+  margin: 1rem;
+  border-style: none;
+  font-size: 1rem;
+}
+#menuContainer > .menu-div > .--object-div-select > .userSelect-label > .select-button:hover {
+  background-color: #18a387;
+}
+#menuContainer > .menu-div > .--object-div-select > .userSelect-label > .select-button:active {
+  background-color: #127a65;
+}
+#menuContainer > .menu-div > .--object-div-delect > .userDelect-label > .delect-button {
+  width: 15rem;
+  height: 3rem;
+  border-radius: 0.375rem;
+  background-color: #1abc9c;
+  color: #ffffff;
+  margin: 1rem;
+  border-style: none;
+  font-size: 1rem;
+}
+#menuContainer > .menu-div > .--object-div-delect > .userDelect-label > .delect-button:hover {
+  background-color: #18a387;
+}
+#menuContainer > .menu-div > .--object-div-delect > .userDelect-label > .delect-button:active {
+  background-color: #127a65;
+}
+
+#infoForm {
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  background-color: #e8e6e6;
+  width: 40rem;
+  height: 50rem;
+  border-radius: 0.75rem;
+  z-index: 1;
+}
+#infoForm > .select-h1 {
+  font-size: 2rem;
+  font-weight: 500;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  margin: 2rem;
+}
+#infoForm > .button-div {
+  margin-top: 11.7rem;
+}
+#infoForm > .button-div > .button-label {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: row;
+  justify-items: flex-start;
+}
+#infoForm > .button-div > .button-label > .no {
+  width: 20rem;
+  height: 5rem;
+  border-radius: 0.75rem;
+  border-style: none;
+  font-size: 2rem;
+  color: #ffffff;
+  background-color: #f47676;
+}
+#infoForm > .button-div > .button-label > .no:hover {
+  background-color: #d36666;
+}
+#infoForm > .button-div > .button-label > .no:active {
+  background-color: #b35858;
+}
+#infoForm > .button-div > .button-label > .ok {
+  width: 20rem;
+  height: 5rem;
+  border-radius: 0.75rem;
+  border-style: none;
+  font-size: 2rem;
+  color: #ffffff;
+  background-color: #1abc9c;
+}
+#infoForm > .button-div > .button-label > .ok:hover {
+  background-color: #17a689;
+}
+#infoForm > .button-div > .button-label > .ok:active {
+  background-color: #127a65;
+}
+#infoForm > .main-form {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-items: flex-start;
+  margin-left: 1rem;
+  gap: 0.5rem;
+}
+#infoForm > .main-form > .---caption {
+  font-size: 1.1rem;
+  font-weight: 350;
+}
+#infoForm > .main-form > .--object-input {
+  width: 20rem;
+  height: 2rem;
+  font-weight: 500;
+  font-size: 1.2rem;
+  border-radius: 0.375rem;
+  border-style: none;
+}
+#infoForm > .main-form > .newNickname > .--object-input {
+  width: 20rem;
+  height: 2rem;
+  font-weight: 500;
+  font-size: 1.2rem;
+  border-radius: 0.375rem;
+  border-style: none;
+}
+#infoForm > .main-form > .newNickname > .--object-button {
+  width: 5rem;
+  height: 2.3rem;
+  border-radius: 0.375rem;
+  font-size: 1rem;
+  color: #ffffff;
+  background-color: #1abc9c;
+  border-style: none;
+}
+#infoForm > .main-form > .newNickname > .--object-button:hover {
+  background-color: #17a689;
+}
+#infoForm > .main-form > .newNickname > .--object-button:active {
+  background-color: #127a65;
+}
+#infoForm > .main-form > .birth {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-items: flex-start;
+  gap: 0.5rem;
+}
+#infoForm > .main-form > .birth > .---caption {
+  font-size: 1.1rem;
+  font-weight: 350;
+}
+#infoForm > .main-form > .birth > .--object-input {
+  width: 20rem;
+  height: 2rem;
+  font-weight: 500;
+  font-size: 1.2rem;
+  border-radius: 0.375rem;
+  border-style: none;
+}
+
+#delect-form {
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  background-color: #000000;
+  width: 40rem;
+  height: 50rem;
+  border-radius: 0.75rem;
+  z-index: 1;
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-items: flex-start;
+  gap: 1rem;
+}
+#delect-form > .delect-span {
+  margin-top: 1rem;
+  margin-left: 1rem;
+  font-size: 2rem;
+  font-weight: 500;
+}
+#delect-form > .--object-label {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-items: flex-start;
+  margin-left: 1rem;
+  gap: 1rem;
+}
+#delect-form > .--object-label > .--object-input {
+  width: 20rem;
+  height: 3rem;
+  border-radius: 0.375rem;
+  border-style: none;
+}
+#delect-form > .button-div {
+  margin-top: 32.4rem;
+}
+#delect-form > .button-div > .button-label {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: row;
+  justify-items: flex-start;
+}
+#delect-form > .button-div > .button-label > .no {
+  width: 20rem;
+  height: 5rem;
+  border-radius: 0.75rem;
+  border-style: none;
+  font-size: 2rem;
+  color: #ffffff;
+  background-color: #f47676;
+}
+#delect-form > .button-div > .button-label > .no:hover {
+  background-color: #d36666;
+}
+#delect-form > .button-div > .button-label > .no:active {
+  background-color: #b35858;
+}
+#delect-form > .button-div > .button-label > .ok {
+  width: 20rem;
+  height: 5rem;
+  border-radius: 0.75rem;
+  border-style: none;
+  font-size: 2rem;
+  color: #ffffff;
+  background-color: #1abc9c;
+}
+#delect-form > .button-div > .button-label > .ok:hover {
+  background-color: #17a689;
+}
+#delect-form > .button-div > .button-label > .ok:active {
+  background-color: #127a65;
+}
+
+/*# sourceMappingURL=mypage.css.map */

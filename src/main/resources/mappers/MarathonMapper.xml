@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.tyk.readingmarathon.mappers.MarathonMapper">
+    <insert id="insertMarathon" parameterType="com.tyk.readingmarathon.entities.MarathonsEntity"
+            useGeneratedKeys="true" keyColumn="index"
+            keyProperty="index">
+        insert into `read_marathon`.`marathons` (`user_email`, `course_code`, `read_count`,
+                                                 `is_done`, `created_at`, `finished_at`,
+                                                 `is_deleted`)
+        VALUES (#{marathon.userEmail}, #{marathon.courseCode}, #{marathon.readCount},
+                #{marathon.isDone}, #{marathon.createdAt}, #{marathon.finishedAt},
+                #{marathon.isDeleted})
+    </insert>
+
+    <update id="update">
+        update `read_marathon`.`marathons`
+        set `index`       = #{marathons.index},
+            `course_code` = #{marathons.courseCord},
+            `read_count`  = #{marathons.readCount},
+            `is_done`     = #{marathons.isDone},
+            `created_at`  = #{marathons.createdAt},
+            `finished_at` = #{marathons.finishedAt}
+        WHERE `user_email` = #{marathons.userEmail}
+    </update>
+    <select id="selectByUserEmail" resultType="com.tyk.readingmarathon.entities.MarathonsEntity">
+        SELECT `index`       AS `index`,
+               `user_email`  AS `userEmail`,
+               `course_code` AS `courseCord`,
+               `read_count`  AS `readCount`,
+               `is_done`     AS `isDone`,
+               `created_at`  AS `createdAt`,
+               `finished_at` AS `finishedAt`
+        FROM `read_marathon`.`marathons`
+        WHERE `user_email` = #{userEmail}
+    </select>
+
+    <select id="selectActiveMarathonIndexByUserEmail" resultType="java.lang.Integer">
+        select `index`
+        from `read_marathon`.`marathons`
+        where `user_email` = #{userEmail}
+          and `is_done` = false
+          and `is_deleted` = false
+        limit 1 </select>
+</mapper>

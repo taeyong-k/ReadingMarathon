@@ -1,0 +1,204 @@
+body {
+  align-items: stretch;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  justify-content: flex-start;
+}
+body > * {
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+body > .-flex-stretch {
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+
+#registerForm {
+  align-items: stretch;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  justify-content: center;
+  background-color: #f5f3f2;
+  width: 25rem;
+  align-self: center;
+  padding: 1.5rem 3rem;
+}
+#registerForm > * {
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+#registerForm > .-flex-stretch {
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+#registerForm > .title {
+  font-size: 1.75rem;
+  font-weight: 200;
+  margin-bottom: 0.5rem;
+}
+#registerForm > .container {
+  align-items: stretch;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  justify-content: flex-start;
+  display: none;
+}
+#registerForm > .container > * {
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+#registerForm > .container > .-flex-stretch {
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+#registerForm > .container.-visible {
+  display: flex;
+}
+#registerForm > .container.info > .--object-label.-invalid > input {
+  border: 0.0625rem solid #e74c3c;
+}
+#registerForm > .container.info > .--object-label.-valid > input {
+  border: 1px solid #1abc9c;
+}
+#registerForm > .container.info > .--object-label.-invalid > input {
+  border: 0.0625rem solid #e74c3c;
+}
+#registerForm > .container.info > .--object-label > .---row > .--object-field {
+  width: 49%;
+}
+#registerForm > .container.info > .--object-label > .---row > .gender-wrapper {
+  background-color: #ffffff;
+  border: 0.0625rem solid #e0e2e4;
+  border-radius: 0.25rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  overflow: hidden;
+  width: 50%;
+}
+#registerForm > .container.info > .--object-label > .---row > .gender-wrapper > .gender {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  gap: 0;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0 0.625rem;
+}
+#registerForm > .container.info > .--object-label > .---row > .gender-wrapper > .gender > * {
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+#registerForm > .container.info > .--object-label > .---row > .gender-wrapper > .gender > .-flex-stretch {
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+#registerForm > .container.info > .--object-label > .---row > .gender-wrapper > .gender:has(> .input:checked) {
+  background-color: #1abc9c;
+  color: #ffffff;
+}
+#registerForm > .container.info > .--object-label > .---row > .gender-wrapper > .gender + .gender {
+  border-left: 0.0625rem solid #e0e2e4;
+}
+#registerForm > .container.info > .--object-label > .---row > .gender-wrapper > .gender > .input {
+  display: none;
+}
+#registerForm > .container.complete {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+  display: none;
+  padding: 1rem 0;
+}
+#registerForm > .container.complete > * {
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+#registerForm > .container.complete > .-flex-stretch {
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+#registerForm > .container.complete.-visible {
+  display: flex;
+}
+#registerForm > .container.complete > .icon {
+  width: 5rem;
+  aspect-ratio: 1/1;
+  filter: brightness(150%);
+}
+#registerForm > .container.complete > .title {
+  font-size: 1.5rem;
+  font-weight: 200;
+  text-align: center;
+}
+#registerForm > .container.complete > .message {
+  font-size: 1rem;
+  text-align: center;
+}
+#registerForm > .button-container {
+  align-items: stretch;
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+#registerForm > .button-container > * {
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+#registerForm > .button-container > .-flex-stretch {
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+#registerForm > .button-container > .--object-button {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  justify-content: center;
+  width: 49%;
+  height: 2rem;
+}
+#registerForm > .button-container > .--object-button > * {
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+#registerForm > .button-container > .--object-button > .-flex-stretch {
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+#registerForm > .button-container > .--object-button > .---caption {
+  font-size: 1rem;
+}
+#registerForm > .button-container > .--object-button > .---icon {
+  height: 1.2rem;
+}
+
+@media screen and (max-width: 100rem) {
+  #registerForm {
+    padding: 1.5rem 3rem;
+  }
+}
+@media screen and (max-width: 80rem) {
+  #registerForm {
+    padding: 1.5rem 1rem;
+  }
+}
+@media screen and (max-width: 60rem) {
+  #registerForm {
+    padding: 1.5rem 3rem;
+  }
+}
+@media screen and (max-width: 40rem) {
+  #registerForm {
+    padding: 1.5rem 1rem;
+  }
+}
+
+/*# sourceMappingURL=register.css.map */

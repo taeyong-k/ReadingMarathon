@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>회원가입 - 독서 마라톤</title>
+    <link rel="stylesheet" type="text/css" href="/assets/styles/common.min.css">
+    <link rel="stylesheet" type="text/css" href="/assets/styles/background.css">
+    <link rel="stylesheet" type="text/css" href="/user/assets/styles/register.min.css">
+    <script src="/assets/scripts/common.js"></script>
+    <script defer src="/user/assets/scripts/register.js" type="text/javascript"></script>
+</head>
+<body>
+<!--<div class="&#45;&#45;loading" id="loading">-->
+<!--    <img src="/assets/images/loading.png" alt="" class="-&#45;&#45;icon">-->
+<!--    <span class="-&#45;&#45;caption">잠시만 기다려 주세요.</span>-->
+<!--</div>-->
+<div class="--dialog"></div>
+<div class="background">
+    <div class="container">
+        <img class="---icon" src="/user/assets/images/register/user.register.background1.jpg" alt="" id="registerImg">
+        <img class="---icon" src="/user/assets/images/register/user.register.background2.jpg" alt="" id="completeImg" style="display: none">
+        <form novalidate id="registerForm">
+            <h1 class="title">회원가입</h1>
+            <div class="container info -visible">
+                <label class="--object-label">
+                    <span class="---caption">이메일</span>
+                    <span class="---row">
+                <input required autocomplete="email" class="--object-field ---field -flex-stretch" maxlength="50"
+                       minlength="8" name="email" placeholder="user@sample.com" type="email">
+                <button class="--object-button -color-green" name="emailCheckButton" id="emailCheckButton" type="button">중복 확인</button>
+            </span>
+                    <span class="---warning">이메일 중복을 확인해 주세요.</span>
+                </label>
+                <label class="--object-label">
+                    <span class="---caption">비밀번호</span>
+                    <input required autocomplete="off" class="--object-field ---field" maxlength="50" minlength="6"
+                           name="password" placeholder="숫자, 알파벳, 특수기호 6자 이상 50자 이하" type="password">
+                    <span class="---warning">비밀번호를 입력해 주세요.</span>
+                    <input required autocomplete="off" class="--object-field ---field" maxlength="50" minlength="6"
+                           name="passwordCheck" placeholder="비밀번호 재입력" type="password">
+                    <span class="---warning">비밀번호를 한 번 더 입력해 주세요.</span>
+                </label>
+                <label class="--object-label">
+                    <span class="---caption">닉네임</span>
+                    <span class="---row">
+                <input required autocomplete="off" class="--object-field ---field -flex-stretch" maxlength="10"
+                       minlength="1" name="nickname" type="text" placeholder="">
+                <button class="--object-button -color-green" name="nicknameCheckButton" type="button">중복 확인</button>
+            </span>
+                    <span class="---warning">닉네임 중복을 확인해 주세요.</span>
+                </label>
+                <label class="--object-label">
+                    <span class="---caption">생년월일 / 성별</span>
+                    <span class="---row">
+                <input required autocomplete="off" class="--object-field ---field" name="birth"
+                       type="date">
+                <span class="gender-wrapper">
+                    <label class="gender">
+                        <input class="input" name="gender" value="M" type="radio">
+                        <span class="caption">남</span>
+                    </label>
+                    <label class="gender">
+                        <input class="input" name="gender" value="F" type="radio">
+                        <span class="caption">여</span>
+                    </label>
+                </span>
+            </span>
+                    <span class="---warning">생년월일을 입력해 주세요.</span>
+                </label>
+            </div>
+            <div class="container complete">
+                <img class="icon" src="/user/assets/images/register/register-form.complete.png" alt="">
+                <span class="title">회원가입 완료</span>
+                <span class="message">회원가입해 주셔서 감사합니다.<br>가입된 계정은 바로 사용할 수 있습니다.<br>회원님의 독서 마라톤 완주를 응원합니다!</span>
+            </div>
+            <div class="button-container">
+                <a class="--object-button -color-gray" href="/user/login">
+                    <span class="---caption">취소</span>
+                    <img class="---icon" src="/user/assets/images/register/register-form.cancel.png" alt="">
+                </a>
+                <button class="--object-button -color-green" type="submit" name="submit">
+                    <span class="---caption">완료</span>
+                    <img class="---icon" src="/user/assets/images/register/register-form.running.png" alt="">
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.tyk.readingmarathon.mappers.ReadBooksMapper">
+    <update id="update">
+        UPDATE `read_marathon`.`read_books`
+        SET `isbn`      = #{readBooks.isbn},
+            `title`     = #{readBooks.title},
+            `author`    = #{readBooks.author},
+            `publisher` = #{readBooks.publisher},
+            `thumbnail` = #{readBooks.thumbnail}
+        WHERE `marathon_index` = #{readBooks.index}
+    </update>
+    <select id="selectAllByIndex" resultType="com.tyk.readingmarathon.entities.ReadBooksEntity">
+        SELECT `isbn`      AS `isbn`,
+               `title`     AS `title`,
+               `author`    AS `author`,
+               `publisher` AS `publisher`,
+               `thumbnail` AS `thumbnail`
+        FROM `read_marathon`.`read_books`
+        WHERE `marathon_index` = #{index}
+    </select>
+    <select id="selectByIndex" resultType="com.tyk.readingmarathon.entities.ReadBooksEntity">
+        SELECT `marathon_index` AS `marathonIndex`,
+               `isbn`           AS `isbn`,
+               `title`          AS `title`,
+               `author`         AS `author`,
+               `publisher`      AS `publisher`,
+               `thumbnail`      AS `thumbnail`
+        FROM `read_marathon`.`read_books`
+        WHERE `marathon_index` = #{index}
+    </select>
+
+    <insert id="insertBook" parameterType="com.tyk.readingmarathon.entities.ReadBooksEntity">
+        insert into `read_marathon`.`read_books` (`marathon_index`, `isbn`, `title`, `author`, `publisher`, `thumbnail`)
+        values (#{marathonIndex}, #{isbn}, #{title}, #{author}, #{publisher},
+                #{thumbnail})
+    </insert>
+</mapper>
