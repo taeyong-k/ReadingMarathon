@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>마이페이지</title>
+  <link href="/static/user/assets/styles/mypage.css" rel="stylesheet" type="text/css">
+  <script src="/assets/scripts/common.js" type="text/javascript"></script>
+  <script defer src="/static/user/assets/scripts/mypage.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="menuContainer">
+  <div class="menu-div">
+    <div class="--object-div-select">
+      <label class="userSelect-label">
+        <button class="select-button">
+          개인정보 수정
+        </button>
+      </label>
+      <form id="infoForm">
+        <h1 class="select-h1">개인정보 수정</h1>
+        <input hidden name="emailSalt" type="hidden">
+        <label class="main-form">
+          <span class="---caption">이메일</span>
+          <input required autocomplete="email" class="--object-input" maxlength="50"
+                 minlength="8" name="email" type="email" placeholder=""
+                 th:value="${user.email}" readonly>
+          <span class="---caption">비밀번호</span>
+          <input required autocapitalize="off" class="--object-input"
+                 maxlength="50" minlength="6" name="currentPassword" placeholder=""
+                 type="password">
+          <span class="---caption">새 비밀번호</span>
+          <input name="newPassword" type="password" class="--object-input" placeholder="새 비밀번호">
+
+          <input name="newPasswordCheck" type="password" class="--object-input" placeholder="새 비밀번호 재입력">
+          <span class="---caption">닉네임</span>
+          <input required autocomplete="off" class="--object-input"
+                 maxlength="10" minlength="1" name="nickname" type="text"
+                 th:value="${user.nickname}">
+          <button class="--object-button"
+                  name="nicknameCheckButton" type="button">중복 확인
+          </button>
+        </label>
+        <label class="birth">
+          <span class="---caption">생일</span>
+          <input required autocomplete="off" class="--object-input" name="birth" type="date"
+                 th:value="${user.birth}">
+        </label>
+        <div class="button-div">
+          <label class="button-label">
+            <button class="no" type="reset">
+              <span class="button-span">취소</span>
+            </button>
+            <button class="ok" type="submit">
+              <span class="button-span">확인</span>
+            </button>
+          </label>
+        </div>
+      </form>
+    </div>
+    <div class="--object-div-delect">
+      <label class="userDelect-label">
+        <button class="delect-button" type="submit">회원탈퇴</button>
+      </label>
+      <form id="delect-form" name="delect-form" class="-visible">
+        <span class="delect-span">회원탈퇴 </span>
+        <label class="--object-label">
+          <input required autocapitalize="off" class="--object-input"
+                 maxlength="50" minlength="6" name="delectPassword" placeholder="비밀번호"
+                 type="password">
+          <input required autocapitalize="off" class="--object-input"
+                 maxlength="50" minlength="6" name="delectPasswordCheck" placeholder="비밀번호 재입력"
+                 type="password">
+        </label>
+        <div class="button-div">
+          <label class="button-label">
+            <button class="no" type="reset">
+              <span class="button-span">취소</span>
+            </button>
+            <button class="ok" type="submit">
+              <span class="button-span">확인</span>
+            </button>
+          </label>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+</body>
+</html>

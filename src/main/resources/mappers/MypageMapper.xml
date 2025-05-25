@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ysh.koreatest.mappers.MypageMapper">
+    <insert id="insertUser">
+        insert into `read_marathon`.`users` (email, password, nickname, birth, gender, is_admin, is_deleted, created_at, modified_at)
+        values(#{user.email}, #{user. password}, #{user.nickname}, #{user. birth}, #{user. gender},
+               #{user. isAdmin}, #{user. isDeleted}, #{user. createdAt}, #{user.modifiedAt})
+    </insert>
+    <update id="update">
+        update `read_marathon`.`users`
+        set `password`   = #{user.password},
+            `nickname`   = #{user.nickname},
+            `birth`      = #{user.birth},
+            `gender`     = #{user.gender},
+            `is_admin`   = #{user.isAdmin},
+            `is_deleted`= #{user.isDeleted},
+            `created_at`= #{user.1createdAt},
+            `modified_at`= #{user.modifiedAt}
+        where `email` = #{user.email}
+        limit 1
+    </update>
+    <select id="selectByEmail" resultType="com.ysh.koreatest.entities.MypageEntity">
+        SELECT `email`               AS `email`,
+               `password`            AS `password`,
+               `nickname`            AS `nickname`,
+               `birth`               AS `birth`,
+               `is_admin`            AS `isAdimin`,
+               `is_deleted`          AS `isDeleted`,
+               `created_at`          AS `createdAt`,
+               `modified_at`         AS `modifiedAt`
+        FROM `read_marathon`.`users`
+        WHERE `email` = #{email}
+        LIMIT 1
+    </select>
+
+    <select id="selectByNickname" resultType="com.ysh.koreatest.entities.MypageEntity">
+        select `email`as`email`,
+               `password`as`password`
+        from `read_marathon`.`users`
+        where`nickname` = #{user.nickname}
+        limit 1
+    </select>
+
+    <select id="selectCountByEmail" resultType="java.lang.Integer">
+        SELECT COUNT(0)
+        FROM `read_marathon`.`users`
+        WHERE `email` = #{email}
+    </select>
+
+    <select id="selectCountByNickname" resultType="java.lang.Integer">
+        SELECT COUNT(0)
+        FROM `read_marathon`.`users`
+        WHERE `nickname` = #{nickname}
+    </select>
+</mapper>
