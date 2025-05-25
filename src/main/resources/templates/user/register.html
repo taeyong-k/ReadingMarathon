@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>회원가입 - SUB</title>
+    <link href="/assets/styles/common.css" rel="stylesheet">
+    <link href="/user/assets/styles/register.css" rel="stylesheet">
+    <script src="/assets/scripts/common.js"></script>
+    <script defer src="/assets/scripts/dialog.js"></script>
+    <script defer src="/user/assets/scripts/register.js"></script>
+</head>
+<body>
+    <form id="registerForm" novalidate>
+        <h1 class="title">회원가입</h1>
+        <table class="table">
+            <tbody>
+            <tr>
+                <th scope="row">
+                    <label class="caption" for="registerEmail">이메일</label>
+                </th>
+                <td>
+                    <div class="row">
+                        <input required autocomplete="off" class="-object-field" id="registerEmail" maxlength="50" minlength="8" name="email" spellcheck="false" type="text">
+                        <span class="warning -visible">이미 사용중인 이메일 입니다.</span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">
+                    <label class="caption" for="registerPassword">비밀번호</label>
+                </th>
+                <td>
+                    <div class="row">
+                        <input required autocomplete="off" class="-object-field" id="registerPassword" maxlength="50" minlength="8" name="password" spellcheck="false" type="password">
+                        <span class="warning -visible">비밀번호가 일치하지 않습니다.</span>
+                    </div>
+                    <div class="row">
+                        <input required autocomplete="off" class="-object-field" maxlength="50" minlength="8" name="passwordCheck" spellcheck="false" type="password">
+                        <span class="warning -visible">비밀번호를 한 번 더 입력해 주세요.</span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">
+                    <label class="caption" for="registerNickname">닉네임</label>
+                </th>
+                <td>
+                    <div class="row">
+                        <input required autocomplete="off" class="-object-field" id="registerNickname" maxlength="10" minlength="2" name="nickname" spellcheck="false" type="text">
+                        <span class="warning -visible">이미 사용중인 닉네임입니다.</span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">
+                    <label class="caption" for="registerBirth">생일</label>
+                </th>
+                <td>
+                    <div class="row">
+                        <input autocomplete="off" class="-object-field" id="registerBirth" name="birth" type="date">
+                        <span class="warning -visible">그냥 내놔.</span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th role="none"></th>
+                <td>
+                    <div class="row">
+                        <textarea readonly class="-object-field">서비스 이용약관</textarea>
+                    </div>
+                    <div class="row">
+                        <label class="-object-check">
+                            <input class="--input" name="agreeTerm" type="checkbox">
+                            <span class="--box"></span>
+                            <span class="--caption">[필수] 위 서비스 이용약관을 읽어 보았고 이해하였으며 동의합니다.</span>
+                        </label>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th role="none"></th>
+                <td>
+                    <div class="row">
+                        <textarea readonly class="-object-field">광고성 정보 수신 약관</textarea>
+                    </div>
+                    <div class="row">
+                        <label class="-object-check">
+                            <input class="--input" name="agreeMarketing" type="checkbox">
+                            <span class="--box"></span>
+                            <span class="--caption">[선택] 위 광고성 정보 수신 약관을 읽어 보았고 이해하였으며 동의합니다.</span>
+                        </label>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <div class="button-container">
+            <a class="-object-button" href="/user/login" target="_self">취소</a>
+            <button class="-object-button --color-green" type="submit">회원가입</button>
+        </div>
+    </form>
+</body>
+</html>

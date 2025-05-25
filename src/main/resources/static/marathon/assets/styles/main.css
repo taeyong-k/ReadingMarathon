@@ -1,0 +1,137 @@
+@charset "UTF-8";
+
+@import "menu.min.css";
+
+* {
+    box-sizing: border-box;
+}
+
+body{
+    position: relative;
+}
+
+#user-menu {
+    position: fixed;
+    right: 0;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 1rem 2rem;
+
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    gap: 0.625rem;
+    justify-content: flex-end;
+    z-index: 999;
+}
+
+#user-menu a {
+    transition-duration: 250ms;
+    transition-property: transform, text-shadow;
+    transition-timing-function: ease;
+}
+
+#user-menu a:hover {
+    transform: translateY(-0.188rem) scale(1.01);
+}
+
+#user-menu a:active {
+    filter: brightness(0.9);
+}
+
+
+#searchForm {
+    width: 100%;
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: 2rem 35rem;
+    overflow: hidden;
+
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: center;
+}
+
+#searchForm .title {
+    font-size: 3rem;
+}
+
+#searchForm .--object-label {
+    display: flex;
+    flex-direction: row;
+}
+
+#searchForm input.--object-field.-invalid {
+    border-color: #e74c3c;
+}
+
+#searchForm .--object-label > .---warning {
+    display: none;
+    color: #e74c3c;
+    font-size: 0.8rem;
+    margin-top: 2px;
+}
+
+#searchForm .--object-label.invalid > .---warning {
+    display: block;
+}
+
+
+#searchForm .book-item {
+    margin-bottom: 0.0625rem;
+    border-bottom: 0.0625rem solid #b2b4b8;
+    font-size: 1.1rem;
+    font-weight: 400;
+
+    align-items: flex-start;
+    display: flex;
+    gap: 0.75rem;
+}
+
+#searchForm .book-thumbnail {
+    width: 5rem;
+    height: auto;
+    object-fit: contain;
+}
+
+#searchForm .book-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.325rem;
+}
+
+#searchForm .book-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#searchForm .book-status,
+#searchForm .book-datetime {
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+#searchForm .book-item {
+    cursor: pointer;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 12px;
+    transition-duration: 375ms;
+    transition-property: all;
+    transition-timing-function: ease;
+}
+
+#searchForm .book-item:hover {
+    background-color: #ec7063;
+}
+
+#searchForm .book-item.selected {
+    background-color: #f5f5f5;
+    border-color: #4a90e2;
+    box-shadow: 0 4px 12px rgba(74, 144, 226, 0.4);
+    transform: scale(1.02);
+}

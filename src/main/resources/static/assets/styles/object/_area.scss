@@ -1,0 +1,43 @@
+@charset "UTF-8";
+
+@use "sass:color";
+@import "../_def";
+
+$field-border-color: #e0e2e4;
+$field-text-color: #212325;
+
+.--object-area {
+  width: 100%;
+  height: auto;
+  color: $field-text-color;
+  padding: 0.5rem;
+  overflow: hidden;
+
+  > .content {
+    min-height: 5rem;
+    background-color: #f5f5f5;
+    border: 0.0625rem solid $field-border-color;
+    border-radius: 0.25rem;
+    margin-bottom: 1rem;
+
+    &.empty {
+      @include flex(column, center, center);
+      color: #bbb;
+      font-size: 1.2rem;
+      font-weight: 600;
+      text-align: center;
+    }
+  }
+
+  > .button-container {
+    @include flex(row, center, center, 0.5rem);
+    opacity: 0;
+    transition-duration: 175ms;
+    transition-property: opacity;
+    transition-timing-function: ease;
+
+    &.-visible {
+      opacity: 1;
+    }
+  }
+}

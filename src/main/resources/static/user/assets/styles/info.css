@@ -1,0 +1,158 @@
+@charset "UTF-8";
+
+#infoForm
+{
+    width: 37.5rem;
+    margin: 0 auto;
+    padding: 4rem;
+
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: flex-start;
+}
+
+#infoForm > .title
+{
+    align-self: flex-start;
+    font-size: 2rem;
+    font-weight: 300;
+}
+
+#infoForm > .table
+{
+    border-spacing: 1rem 0.5rem;
+    margin: -0.5rem -1rem;
+}
+
+#infoForm > .table > tbody > tr > th
+{
+    font: inherit;
+    text-align: right;
+    white-space: nowrap;
+}
+
+#infoForm > .table > tbody > tr > th > .caption
+{
+    position: relative;
+}
+
+#infoForm > .table > tbody > tr:has([required]) > th > .caption::after
+{
+    top: 50%;
+    left: 100%;
+    color: #ec7063;
+    content: '*';
+    position: absolute;
+    transform: translateY(-50%);
+}
+
+#infoForm > .table > tbody > tr > td
+{
+    width: 100%;
+}
+
+#infoForm > .table > tbody > tr > td .-object-field
+{
+    /*width: 15rem;*/
+}
+
+#infoForm > .table > tbody > tr > td textarea.-object-field
+{
+    /*width: 27.5rem;*/
+    height: 7.5rem;
+}
+
+
+#infoForm > .table > tbody > tr > td > .row
+{
+    position: relative;
+
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    gap: 0.625rem;
+    justify-content: flex-start;
+}
+
+#infoForm > .table > tbody > tr > td > .row + .row
+{
+    margin-top: 0.375rem;
+}
+
+#infoForm > .table > tbody > tr > td > .row > *
+{
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+
+#infoForm > .table > tbody > tr > td > .row > .warning
+{
+    top: calc(100% + 0.125rem);
+    right: 0;
+    background-color: #e74c3c80;
+    border-radius: 0.25rem;
+    font-size: 0.75rem;
+    opacity: 0;
+    padding: 0.125rem 0.25rem;
+    pointer-events: none;
+    position: absolute;
+    transition-duration: 125ms;
+    transition-property: top, opacity;
+    transition-timing-function: ease;
+    z-index: 1;
+}
+
+#infoForm > .table > tbody > tr > td > .row > .warning::before
+{
+    top: 0;
+    right: 1rem;
+    width: 0.5rem;
+    height: 0.5rem;
+    content: '';
+    background-color: inherit;
+    position: absolute;
+    transform: rotateZ(45deg) translateY(-50%);
+    z-index: -1;
+}
+
+
+#infoForm > .table > tbody > tr > td > .row > .-object-field.-invalid+ .warning
+{
+    top: calc(100% + 0.375rem);
+    opacity: 1;
+}
+
+
+#infoForm > .button-container
+{
+    align-self: flex-end;
+
+    align-items: stretch;
+    display: flex;
+    flex-direction: row;
+    gap: 0.75rem;
+    justify-content: center;
+}
+
+#infoForm > .button-container > .-object-button
+{
+    height: 2.625rem;
+    padding: 0 2rem;
+}
+
+@media screen and (max-width: 40rem) {
+    #infoForm
+    {
+        width: 100%;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    #infoForm > .title
+    {
+        font-size: 1.5rem;
+    }
+
+}

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tyk.readingmarathon.mappers.ReadBooksMapper">
+    <insert id="insertBook" parameterType="com.tyk.readingmarathon.entitites.ReadBooksEntity">
+        insert into `read_marathon`.`read_books` (`marathon_index`, `isbn`, `title`, `author`, `publisher`, `thumbnail`)
+        VALUES (#{book.marathonIndex}, #{book.isbn}, #{book.title}, #{book.author}, #{book.publisher},
+                #{book.thumbnail});
+    </insert>
+
+
+</mapper>
