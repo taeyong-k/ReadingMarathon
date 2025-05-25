@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>RM - 마라톤 페이지</title>
+    <link rel="stylesheet" href="/assets/styles/common.min.css">
+    <link rel="stylesheet" href="/marathon/assets/styles/marathon.min.css">
+    <script defer src="/marathon/assets/scripts/marathon.js"></script>
+<!--    <script defer src="/assets/scripts/book.js"></script>-->
+</head>
+<body>
+    <form novalidate id="situationForm">
+        <h1 class="---title">마라톤 진행상황</h1>
+        <div class="wrapper">
+            <div class="container info">
+                <label class="--object-label">
+                    <span class="---caption" th:text="${now}"></span>
+                </label>
+                <div class="-flex-stretch"></div>
+                <div class="list">
+                    <label class="--object-field item">
+                        <span class="---caption">지금 선택된 책 목록</span>
+                        <input class="--object-field" name="book" type="checkbox">
+                    </label>
+                    <label class="--object-field item">
+                        <span class="---caption">지금 선택된 책 목록</span>
+                        <input class="--object-field" name="book" type="checkbox">
+                    </label>
+                </div>
+                    <div class="button-container -visible">
+                        <button disabled class="--object-button -color-gray" name="previous"
+                                type="button">
+                            <img alt="" class="---icon"
+                                 src="/marathon/assets/images/marathon/marathon-form.previous.png">
+                            <span class="---caption">이전</span>
+                        </button>
+                        <span class="page-info">
+                        <span class="current-page">1</span> / <span class="total-pages">10</span> <!-- 현재 페이지 / 총 페이지 수 -->
+                    </span>
+                        <button class="--object-button -color-green" name="submit" type="submit">
+                            <span class="---caption">다음</span>
+                            <img alt="" class="---icon"
+                                 src="/marathon/assets/images/marathon/marathon-form.next.png">
+                        </button>
+                    </div>
+                <div class="-flex-stretch"></div>
+                <span class="---row">
+                    <button class="--object-button -color-red" name="giveUp" type="button">포기</button>
+                    <button class="--object-button -color-blue" name="back" type="button">나가기</button>
+                </span>
+            </div>
+            <div class="--object-area">
+                <div class="---content">
+                    <div class="book-wrapper">
+                        <div class="books">
+                            <div class="container">
+                                <h4 class="subtitle">미움받을 용기</h4>
+                                <button class="--object-button -color-green" type="button" value="taza">완료</button>
+                            </div>
+                            <img class="image"
+                                 src="https://search1.kakaocdn.net/thumb/R120x174.q85/?fname=http%3A%2F%2Ft1.daumcdn.net%2Flbook%2Fimage%2F1467038"
+                                 alt="">
+                        </div>
+                        <div class="books">
+                            <div class="container">
+                                <h4 class="subtitle">미움받을 용기</h4>
+                                <button class="--object-button -color-green" type="button" value="taza">완료</button>
+                            </div>
+                            <img class="image"
+                                 src="https://search1.kakaocdn.net/thumb/R120x174.q85/?fname=http%3A%2F%2Ft1.daumcdn.net%2Flbook%2Fimage%2F1467038"
+                                 alt="">
+                        </div>
+                        <div class="books">
+                            <div class="container">
+                                <h4 class="subtitle">미움받을 용기</h4>
+                                <button class="--object-button -color-green" type="button" value="taza">완료</button>
+                            </div>
+                            <img class="image"
+                                 src="https://search1.kakaocdn.net/thumb/R120x174.q85/?fname=http%3A%2F%2Ft1.daumcdn.net%2Flbook%2Fimage%2F1467038"
+                                 alt="">
+                        </div>
+                    </div>
+                    <div class="book-wrapper">
+                        <div class="books">
+                            <div class="container">
+                                <h4 class="subtitle">미움받을 용기</h4>
+                                <button class="--object-button -color-green" type="button" value="taza">완료</button>
+                            </div>
+                            <img class="image"
+                                 src="https://search1.kakaocdn.net/thumb/R120x174.q85/?fname=http%3A%2F%2Ft1.daumcdn.net%2Flbook%2Fimage%2F1467038"
+                                 alt="">
+                        </div>
+                        <div class="books">
+                            <div class="container">
+                                <h4 class="subtitle">미움받을 용기</h4>
+                                <button class="--object-button -color-green" type="button" value="taza">완료</button>
+                            </div>
+                            <img class="image"
+                                 src="https://search1.kakaocdn.net/thumb/R120x174.q85/?fname=http%3A%2F%2Ft1.daumcdn.net%2Flbook%2Fimage%2F1467038"
+                                 alt="">
+                        </div>
+                        <div class="books">
+                            <div class="container">
+                                <h4 class="subtitle">미움받을 용기</h4>
+                                <button class="--object-button -color-green" type="button" value="taza">완료</button>
+                            </div>
+                            <img class="image"
+                                 src="https://search1.kakaocdn.net/thumb/R120x174.q85/?fname=http%3A%2F%2Ft1.daumcdn.net%2Flbook%2Fimage%2F1467038"
+                                 alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="button-container -visible">
+                    <button disabled class="--object-button -color-gray" name="previous"
+                            type="button">
+                        <img alt="" class="---icon"
+                             src="/marathon/assets/images/marathon/marathon-form.previous.png">
+                        <span class="---caption">이전</span>
+                    </button>
+                    <span class="page-info">
+                        <span class="current-page">1</span> / <span class="total-pages">10</span> <!-- 현재 페이지 / 총 페이지 수 -->
+                    </span>
+                    <button class="--object-button -color-green" name="submit" type="submit">
+                        <span class="---caption">다음</span>
+                        <img alt="" class="---icon"
+                             src="/marathon/assets/images/marathon/marathon-form.next.png">
+                    </button>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,169 @@
+@charset "UTF-8";
+
+@import "../../../assets/styles/object/_def";
+@import "../../../assets/styles/__def.scss";
+
+#situationForm {
+  width: 100%;
+  padding: 0 15rem;
+  margin-top: 3rem;
+  @include flex(column, center, flex-start, 5rem);
+
+  > .---title {
+    font-size: 3rem;
+    text-align: center;
+  }
+
+  > .wrapper {
+    @include flex(row, flex-start, flex-start, 5rem);
+
+    .container.info {
+      position: fixed;
+      left: 2rem;
+      width: 20rem;
+      height: 60vh;
+      margin-left: 2rem;
+      padding: 1.5rem 1rem;
+      border: 1px solid #333;
+      border-radius: 0.5rem;
+      background-color: #f4f4f4;
+      box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+      overflow-y: auto;
+      z-index: 15;
+
+      @include flex(column, center, center, 1rem);
+
+      > .button-container {
+        @include flex(row, center, center, 0.5rem);
+
+        > .--object-button {
+          width: 3.75rem;
+        }
+      }
+
+      > .--object-field,
+      > .--object-label {
+
+        > .---column {
+          @include flex(column, center, center, 2rem);
+
+        }
+
+        > .---caption {
+          font-size: 1.75rem;
+          font-weight: 500;
+        }
+      }
+
+      > .list
+      {
+        @include flex(column, center, center, 1rem);
+        > .--object-field.item
+        {
+          >[type="checkbox"]
+          {
+            opacity: 0;
+          }
+          > .---caption
+          {
+            font-size: 1.5rem;
+            font-weight: 100;
+          }
+
+          > .--object-field
+          {
+            list-style: none;
+          }
+          &:has(> input[type="checkbox"]:checked) {
+            border-color: red;
+          }
+        }
+      }
+
+
+      > .---row {
+        @include flex(row, flex-start, center, 2rem);
+
+        > .--object-button
+        {
+          width: 5rem;
+          height: 3rem;
+        }
+      }
+    }
+
+    > .--object-area {
+
+      > .---content {
+        width: 100%;
+        height: auto;
+        white-space: normal;
+        @include flex(column, flex-start, flex-start, 5rem);
+
+        > .book-wrapper {
+          height: 50%;
+          @include flex(row, flex-start, flex-start, 0);
+
+          > .books {
+            border: 1px solid #7e7e7e7e;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+
+            > .image {
+              width: 12.5rem;
+              transition: transform 0.3s ease, filter 0.3s ease;
+              filter: none;
+            }
+
+            > .container {
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              opacity: 0;
+              transition: opacity 0.3s ease;
+              @include flex(column, center, center, 5rem);
+              z-index: 1;
+
+              > .subtitle {
+                white-space: nowrap;
+                font-size: 1.5rem;
+                font-weight: 300;
+              }
+            }
+
+            > .book-info
+            {
+              width: 100%;
+              @include flex(row, center,center, 0);
+              flex-wrap: wrap;
+              background-color: #000000;
+              color: #fff;
+              padding: 10px;
+              opacity: 0;
+            }
+
+            &:hover {
+              transform: translateY(-10px);
+              > .container{
+                width: 100%;
+                height: 100%;
+                opacity: 1;
+              }
+              > .image
+              {
+                filter: blur(5px);
+              }
+
+              > .book-info
+              {
+                opacity: 1;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
