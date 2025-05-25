@@ -1,0 +1,61 @@
+create schema `read_marathon`;
+
+create table `read_marathon`.`users`
+(
+    `email`       varchar(50)     not null comment '이메일',
+    `password`    varchar(128)    not null comment '비밀번호',
+    `nickname`    varchar(10)     not null comment '닉네임',
+    `birth`       date            not null comment '생일',
+    `gender`      enum ('F', 'M') not null comment '성별',
+    `is_admin`    boolean         not null default false comment '관리자 유무',
+    `is_deleted`  boolean         not null default false comment '계정 삭제 유무',
+    `created_at`  datetime        not null default now() comment '회원기입 일시',
+    `modified_at` datetime        not null default now() comment '개인정보 수정 일시',
+    constraint primary key (`email`),
+    constraint unique (`nickname`)
+);
+
+create table `read_marathon`.`courses`
+(
+    `code`         varchar(10)  not null comment '목표 코스',
+    `display_text` varchar(10)  not null comment 'html에서 보여지는 텍스트',
+    constraint primary key (`code`)
+);
+
+insert into `read_marathon`.`courses`
+values ('beginner', '초급'),
+       ('middle', '중급'),
+       ('high', '고급'),
+       ('master', '마스터');
+
+create table `read_marathon`.`marathons`
+(
+    `index`       int unsigned not null auto_increment comment '마라톤 횟수',
+    `user_email`  varchar(50)  not null comment '사용자 이메일',
+    `course_code` varchar(20)  not null comment '코스 코드',
+    `read_count`  int unsigned not null comment '완독한 책 권수',
+    `is_done`     boolean      not null default false comment '마라톤 완주여부',
+    `created_at`  datetime     not null default now() comment '마라톤 시작 일시',
+    `finished_at` datetime     not null default now() comment '마라톤 완주 일시',
+    `is_deleted` boolean     not null default false comment '마라톤 포기 여부',
+    constraint primary key (`index`),
+    constraint foreign key (`user_email`) references `read_marathon`.`users` (`email`) on delete cascade on update cascade,
+    constraint foreign key (`course_code`) references `read_marathon`.`courses` (`code`) on delete cascade on update cascade,
+    constraint unique (`user_email`)
+);
+
+// drop table `read_marathon`.`marathons`;
+
+create table `read_marathon`.`read_books`
+(
+    `index` int unsigned not null ,
+    `isbn`      varchar(25)  null default null comment 'isbn 코드(pk용도, html사용x)',
+    `title`     varchar(128) not null comment '책제목',
+    `author`    varchar(128) not null comment '저자',
+    `publisher` varchar(128) not null comment '출판사',
+    `thumbnail` varchar(128) not null comment '표지 url',
+    constraint primary key (`isbn`),
+    constraint foreign key (`index`) references `read_marathon`.`marathons` (`index`) on update cascade on delete cascade
+);
+
+// drop table `read_marathon`.`read_books`;

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sby.testproject.mappers.UserMapper">
+    <insert id="insertUser">
+        INSERT INTO `read_marathon`.`users` (`email`, `password`, `nickname`, `birth`, `gender`,  `is_admin`, `is_deleted`, `created_at`, `modified_at`)
+        VALUES (#{user.email},#{user.password},#{user.nickname},#{user.birth}, #{user.gender},#{user.isAdmin}, #{user.isDeleted},#{user.createdAt},#{user.modifiedAt})
+    </insert>
+
+    <select id="selectByEmail" resultType="com.sby.testproject.entitites.UserEntity">
+        SELECT `email`               AS `email`,
+               `password`            AS `password`,
+               `nickname`            AS `nickname`,
+               `birth`               AS `birth`,
+               `gender` AS `gender`,
+               `is_admin`            AS `isAdimin`,
+               `is_deleted`          AS `isDeleted`,
+               `created_at`          AS `createdAt`,
+               `modified_at`         AS `modifiedAt`
+        FROM `read_marathon`.`users`
+        WHERE `email` = #{email}
+        LIMIT 1
+    </select>
+
+    <select id="selectCountByEmail" resultType="java.lang.Integer">
+        SELECT COUNT(0)
+        FROM `read_marathon`.`users`
+        WHERE `email` = #{email}
+    </select>
+
+    <select id="selectCountByNickname" resultType="java.lang.Integer">
+        SELECT COUNT(0)
+        FROM `read_marathon`.`users`
+        WHERE `nickname` = #{nickname}
+    </select>
+
+    <select id="selectCountActiveMarathonByEmail" resultType="java.lang.Integer">
+        SELECT count(0)
+        FROM `read_marathon`.`marathons`
+        WHERE `user_email` = #{email}
+          AND `is_deleted` = FALSE
+          AND `finished_at` IS NULL
+    </select>
+
+    <!-- PK 기준으로 PK를 제외한 모든 열의 값을 UPDATE 할 수 있는 쿼리 -->
+    <update id="update">
+        UPDATE `read_marathon`.`users`
+        SET `password` = #{user.password},
+            `nickname` = #{user.nickname},
+            `birth` = #{user.birth},
+            `gender` = #{user.gender},
+            `is_admin` = #{user.isAdmin},
+            `is_deleted` = #{user.isDeleted},
+            `created_at` = #{user.createdAt},
+            `modified_at` = #{user.modifiedAt}
+        WHERE `email` = #{user.email}
+        LIMIT 1
+    </update>
+    <select id="selectByNickname" resultType="com.sby.testproject.entitites.UserEntity">
+        SELECT `email`               AS `email`,
+               `password`            AS `password`
+        FROM `read_marathon`.`users`
+        WHERE `nickname` = #{nickname}
+        LIMIT 1
+    </select>
+</mapper>

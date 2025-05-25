@@ -1,0 +1,157 @@
+@import "../../../assets/styles/_def";
+
+body {
+  @include flex(column, stretch, flex-start);
+}
+#registerForm {
+  @include flex(column, stretch, center, 0.5rem);
+  background-color: #f5f3f2;
+  width: 25rem;
+  align-self: center;
+  padding: 1.5rem 3rem;
+  //margin: auto;
+  //box-shadow: 0 0 1rem 0.025rem #dbdbdb;
+
+  > .title {
+    font-size: 1.75rem;
+    font-weight: 200;
+    margin-bottom: 0.5rem;
+  }
+
+  > .container {
+    @include flex(column, stretch, flex-start, 0.35rem);
+    display: none;
+
+    &.-visible {
+      display: flex;
+    }
+
+    &.info {
+
+      > .--object-label {
+
+        &.-invalid {
+          > input {
+            border: 0.0625rem solid #e74c3c;
+          }
+        }
+
+        &.-valid {
+          > input {
+            border: 1px solid #1abc9c;
+          }
+        }
+
+        &.-invalid {
+          > input {
+            border: 0.0625rem solid #e74c3c;
+          }
+        }
+
+        > .---row {
+
+          > .--object-field {
+            width: 49%;
+          }
+
+          > .gender-wrapper {
+            background-color: #ffffff;
+            border: 0.0625rem solid #e0e2e4;
+            border-radius: 0.25rem;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: 1fr;
+            overflow: hidden;
+            width: 50%;
+
+            > .gender {
+              @include flex(row, center, center);
+              cursor: pointer;
+              padding: 0 0.625rem;
+
+              &:has(> .input:checked) {
+                background-color: #1abc9c;
+                color: #ffffff;
+              }
+
+              + .gender {
+                border-left: 0.0625rem solid #e0e2e4;
+              }
+
+              > .input {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &.complete {
+      @include flex(column, center, center, 1rem);
+      display: none;
+      padding: 1rem 0;
+
+      &.-visible {
+        display: flex;
+      }
+
+      > .icon {
+        width: 5rem;
+        aspect-ratio: 1/1;
+        filter: brightness(150%);
+      }
+
+      > .title {
+        font-size: 1.5rem;
+        font-weight: 200;
+        text-align: center;
+      }
+
+      > .message {
+        font-size: 1rem;
+        text-align: center;
+      }
+    }
+  }
+
+  > .button-container {
+    @include flex(row, stretch, center, 0.5rem);
+    margin-top: 0.5rem;
+
+    > .--object-button {
+      @include flex(row, center, center, 1rem);
+      width: 49%;
+      height: 2rem;
+
+      > .---caption {
+        font-size: 1rem;
+      }
+
+      > .---icon {
+        height: 1.2rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 100rem) {
+  #registerForm {
+    padding: 1.5rem 3rem;
+  }
+}
+@media screen and (max-width: 80rem) {
+  #registerForm {
+    padding: 1.5rem 1rem;
+  }
+}
+@media screen and (max-width: 60rem) {
+  #registerForm {
+    padding: 1.5rem 3rem;
+  }
+}
+@media screen and (max-width: 40rem) {
+  #registerForm {
+    padding: 1.5rem 1rem;
+  }
+}
